@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include zamtel_payments *.css
+recursive-include zamtel_payments *.csv
+recursive-include zamtel_payments *.html
+recursive-include zamtel_payments *.ico
+recursive-include zamtel_payments *.js
+recursive-include zamtel_payments *.json
+recursive-include zamtel_payments *.md
+recursive-include zamtel_payments *.png
+recursive-include zamtel_payments *.py
+recursive-include zamtel_payments *.svg
+recursive-include zamtel_payments *.txt
+recursive-exclude zamtel_payments *.pyc
