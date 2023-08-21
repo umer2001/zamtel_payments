@@ -115,14 +115,12 @@ def verify_transaction(result, **kwargs):
             frappe.db.set_value("POS Invoice", pr.reference_name,
                                 "zamtel_receipt_number", zamtel_receipts)
         except Exception:
-            frappe.log_error("Zamtel: Failed to verify transaction")
             frappe.throw(
                 title="Error",
                 msg=_("Zamtel: Failed to verify transaction")
             )
 
     else:
-        frappe.log_error("Zamtel: Failed to verify transaction")
         frappe.throw(
             title="Error",
             msg=_("Zamtel: Failed to verify transaction")
