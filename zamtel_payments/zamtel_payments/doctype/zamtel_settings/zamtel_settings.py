@@ -116,11 +116,17 @@ def verify_transaction(result, **kwargs):
                                 "zamtel_receipt_number", zamtel_receipts)
         except Exception:
             frappe.log_error("Zamtel: Failed to verify transaction")
-            frappe.throw(_("Zamtel: Failed to verify transaction"))
+            frappe.throw(
+                title="Error",
+                msg=_("Zamtel: Failed to verify transaction")
+            )
 
     else:
         frappe.log_error("Zamtel: Failed to verify transaction")
-        frappe.throw(_("Zamtel: Failed to verify transaction"))
+        frappe.throw(
+            title="Error",
+            msg=_("Zamtel: Failed to verify transaction")
+        )
 
     frappe.publish_realtime(
         event="process_phone_payment",
