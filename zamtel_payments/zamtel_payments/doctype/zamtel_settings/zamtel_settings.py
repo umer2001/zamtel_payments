@@ -71,7 +71,7 @@ def generate_zamtel_push(**kwargs):
 
         response = connector.zamtel_push(
             amount=args.request_amount,
-            phone_number=mobile_number,
+            phone=mobile_number,
             requesting_account=zamtel_settings.requesting_account,
         )
 
@@ -98,7 +98,7 @@ def verify_transaction(result, **kwargs):
     total_paid = 0  # for multiple integration request made against a pos invoice
     success = False  # for reporting successfull callback to point of sale ui
 
-    if args.reference_doctype and args.reference_docname:
+    if args.reference_doctype and args.reference_docname and result.get("success"):
         try:
             zamtel_receipt = args.payment_reference
             pr = frappe.get_doc(

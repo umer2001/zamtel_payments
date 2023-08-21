@@ -31,7 +31,7 @@ class ZamtelConnector:
     def zamtel_push(
             self,
             amount=None,
-            phone_number=None,
+            phone=None,
             requesting_account=None,
     ):
         """
@@ -39,7 +39,7 @@ class ZamtelConnector:
 
         Args:
                 amount (int): The amount being transacted
-                phone_number(int): The Mobile Number to receive the STK Pin Prompt.
+                phone(int): The Mobile Number to receive the STK Pin Prompt.
                 requesting_account(int): The Till Number to receive the funds being transacted.	
 
         Success Response:
@@ -57,7 +57,7 @@ class ZamtelConnector:
 
         payload = {
             "amount": amount,
-            "phoneNumber": phone_number,
+            "phone": phone,
             "requestingAccount": requesting_account,
         }
         headers = {
