@@ -1,0 +1,4 @@
+.zamtel-zamtel.mode-of-payment-control .control-input {
+    cursor: not-allowed;
+    pointer-events: none;
+}
